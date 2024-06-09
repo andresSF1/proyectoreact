@@ -1,42 +1,41 @@
-import React from 'react'
-import CartWidget from "../CartWidget/CartWidget.jsx"
+import React from 'react';
+import { Link, Link as RouterLink } from 'react-router-dom';
+import CartWidget from '../CartWidget/CartWidget';
 import {
-  Box,
   Flex,
-  Avatar,
-  HStack,
-  Link,
-  IconButton,
   Button,
   Menu,
   MenuButton,
   MenuList,
   MenuItem,
-  MenuDivider,
-  useDisclosure,
-  useColorModeValue,
-  Stack,
   Heading,
-  Center,
 } from '@chakra-ui/react';
-import { CgPushChevronDown } from "react-icons/cg";
+import { HiOutlineChevronDoubleDown } from "react-icons/hi";
 
-const NavBar = () => {
+const Navbar = () => {
   return (
-    <Flex h={'10vh'} w={'100%'} justifyContent={'space-between'} align={'center'} backgroundColor={'red'}>
-      <Heading>logo</Heading>
-      <Menu>
-        <MenuButton as={Button} rightIcon={<CgPushChevronDown />}>Menú </MenuButton>
-              <MenuList>
-                <MenuItem>Link 1</MenuItem>
-                <MenuItem>Link 2</MenuItem>
-                <MenuDivider />
-                <MenuItem>Link 3</MenuItem>
-              </MenuList>
-            </Menu>
-      <CartWidget />
-    </Flex>
-  )
-}
+	<Flex
+  	h={'10vh'}
+  	w={'100%'}
+  	justify={'space-between'}
+  	align={'center'}
+  	backgroundColor={'#063970'}>
+  	<Heading m={3}><Link to='/'>logo</Link></Heading>
+  	<Menu>
+    	<MenuButton as={Button} rightIcon={<HiOutlineChevronDoubleDown />}>
+      	Menú desplegable
+    	</MenuButton>
+    	<MenuList>
+      	<MenuItem as={RouterLink} to='/categorias/Teclados'>Teclados</MenuItem>
+      	<MenuItem as={RouterLink} to='/categorias/Mouse'>Mouse</MenuItem>
+      	<MenuItem as={RouterLink} to='/categorias/TarjetaDeVideo'>TarjetaDeVideo</MenuItem>
+      	<MenuItem as={RouterLink} to='/categorias/Audifonos'>Audifonos</MenuItem>
+        <MenuItem as={RouterLink} to='/categorias/Mousepad'>Mousepad</MenuItem>
+    	</MenuList>
+  	</Menu>
+  	<CartWidget />
+	</Flex>
+  );
+};
 
-export default NavBar
+export default Navbar;
