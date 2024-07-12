@@ -9,8 +9,10 @@ import {
   MenuList,
   MenuItem,
   Heading,
+  Image,
 } from '@chakra-ui/react';
 import { HiOutlineChevronDoubleDown } from "react-icons/hi";
+import logo from '../../assets/logo-a.png'
 
 const Navbar = () => {
   return (
@@ -20,7 +22,8 @@ const Navbar = () => {
   	justify={'space-between'}
   	align={'center'}
   	backgroundColor={'#063970'}>
-  	<Heading m={3}><Link to='/'>logo</Link></Heading>
+  	<Heading m={3}><Link to='/'> <Image src={logo} alt='logo' boxSize='100px'/>
+</Link></Heading>
   	<Menu>
     	<MenuButton as={Button} rightIcon={<HiOutlineChevronDoubleDown />}>
       	Menú desplegable
